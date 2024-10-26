@@ -7,7 +7,7 @@ using namespace std;
 vector<int> vec;
 bool binarySearch(int a, int high, int low) {
 	int mid = (high + low) / 2;
-	if (high - low <= 256) {
+	if (high - low <= 128) {
 		for (int i = low; i <= high; i++) {
 			if (a == vec[i]) {
 				return true;
