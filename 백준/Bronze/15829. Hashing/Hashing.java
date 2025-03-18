@@ -1,4 +1,3 @@
-import java.lang.Math;
 import java.util.Scanner;
 
 public class Main {
@@ -8,18 +7,20 @@ public class Main {
         String s = scanner.next();
 
         long answer = 0;
-        int tmp = 0;
+        long tmp = 1;
         for(int i = 0; i<n; i++){
-//            System.out.print(s.charAt(i)-'a'+1);
-//            System.out.print('\t');
-//            System.out.print(Math.pow(31,tmp));
-//            System.out.print('\t');
-//            System.out.print((s.charAt(i) - 'a'+1) * Math.pow(31,tmp));
-//            System.out.print('\t');
-            answer += (s.charAt(i) - 'a'+1) * Math.pow(31,tmp++);
-//            System.out.println(answer);
+            int value = s.charAt(i) - 'a'+1;
+            /*System.out.print(value);
+            System.out.print('\t');
+            System.out.print(tmp);
+            System.out.print('\t');
+            System.out.print(value*tmp);
+            System.out.print('\t');
+            */answer = (answer + (value * tmp)%1234567891)%1234567891;
+            //System.out.println(answer);
+            tmp*=31;
+            tmp %= 1234567891;
         }
-//        System.out.println();
         System.out.println(answer);
 
     }
